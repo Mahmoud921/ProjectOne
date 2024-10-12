@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Online.Data
 {
-    public class ApplicationDbContext:IdentityDbContext
+    public class ApplicationDbContext:DbContext
 
     {
         public DbSet<Student> Students { get; set; }
@@ -14,7 +14,7 @@ namespace Online.Data
         public DbSet<Category> Categoryes { get; set; }
         public DbSet<CardItem> CardItems { get; set; }
 
-        public ApplicationDbContext(DbContextOptions options ):base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options ):base(options)
         {
             
         }
